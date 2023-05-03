@@ -20,7 +20,7 @@
 			var year = date && !isNaN(date) ? date + ". " : (typeof item.date == 'undefined'?  "" : item.date + ". ");
 			var library_id = item.libraryID ? item.libraryID : "";
 			var author_lastname = getValidAuthor(item);
-			var title = item.title ? "*" + item.title + "*" : "";
+			var title = item.title ?? "";
 			var key = item.key;
 	
 			Zotero.write(`[${author_lastname}${year}${title}](zotero://select/items/${library_id}_${key})`);
